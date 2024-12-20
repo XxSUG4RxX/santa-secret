@@ -24,33 +24,40 @@ export function ParticipantInput({
 
   return (
     <div className="space-y-4">
-      // Champs de saisie pour ajouter un participant
-      <div className="flex space-x-2">
+      <div className="flex justify-center space-x-8 px-4">
         <input
           type="text"
-          className="input flex-grow"
-          placeholder="Entrez un nom"
+          className="input flex-grow px-4 font-bold outline-none"
+          placeholder="nom"
           value={currentName}
           onChange={(e) => setCurrentName(e.target.value)}
           onKeyPress={(e) => e.key === "Enter" && addParticipant()}
+          style={{ 
+            backgroundImage: 'url(img/bginput.svg)', 
+            backgroundSize: 'contain', 
+            backgroundPosition: 'center', 
+            backgroundRepeat: 'no-repeat',
+          }}
         />
         <button className="button" onClick={addParticipant}>
-          Ajouter
+          <img src="img/btnadd.svg" alt="" />
         </button>
       </div>
-      // Liste des participants ajoutés
-      <ul className="space-y-2">
+      <ul className="space-y-0 flex flex-col mt-10 items-center">
         {participants.map((name, index) => (
-          <li key={index} className="list-item">
-            {name}
-            <div className="space-x-2">
+          <li key={index} className="flex items-center justify-between w-full px-12">
+            <p 
+              className="flex font-bold items-center justify-center w-3/4 h-12 bg-no-repeat bg-cover bg-center" 
+              style={{ 
+                backgroundImage: 'url(img/bgname.svg)', 
+                backgroundSize: 'contain',
+              }}
+            >{name}</p>
               <button
-                className="text-red-500 hover:text-red-700"
                 onClick={() => onRemoveParticipant(index)}
               >
-                Supprimer
+                <img src="img/btnremove.svg" alt="" />
               </button>
-            </div>
           </li>
         ))}
       </ul>

@@ -17,3 +17,11 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
+
+@theme {
+
+  --color-rouge: #FC3C2B;
+  --color-vert: #075C45;
+  --color-rose: #FF8FC7;
+
+}

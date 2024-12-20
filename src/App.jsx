@@ -51,31 +51,39 @@ export default function App() {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto">
       <div>
-        // affiche l'écran en fonction de l'état de l'application // WELCOME
+        
         {currentScreen === "welcome" && (
           <WelcomeScreen onStart={() => setCurrentScreen("input")} />
         )}
-        // INPUT
+
         {currentScreen === "input" && (
-          <>
-            <h2 className="text-2xl font-bold mb-6 text-center">
-              Ajoutez les participants
+          <><div className=" bg-[url('img/bg2.png')] bg-no-repeat  h-screen">
+            <h2 className="text-4xl text-white font-bold py-6 text-center">
+              Participants
             </h2>
             <ParticipantInput
               onAddParticipant={addParticipant}
               participants={participants}
               onRemoveParticipant={removeParticipant}
             />
-            <div className="mt-6">
-              <button className="button w-full" onClick={distributeGifts}>
-                Distribuer les cadeaux
+            <div className="mt-6 flex justify-center">
+              <button className="text-white text-3xl font-bold w-fit pt-2 pr-12 pl-12 pb-6 mb-16" onClick={distributeGifts} 
+              style={{ 
+                backgroundImage: 'url(img/bgbtnv.svg)', 
+                backgroundSize: 'contain', 
+                backgroundPosition: 'center', 
+                backgroundRepeat: 'no-repeat',
+      
+              }}>
+                Distribuer
               </button>
+            </div>
             </div>
           </>
         )}
-        // ASSIGNMENTS
+
         {currentScreen === "assignments" && (
           <>
             <h2 className="text-2xl font-bold mb-6 text-center">
