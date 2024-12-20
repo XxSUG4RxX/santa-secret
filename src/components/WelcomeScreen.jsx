@@ -1,7 +1,7 @@
 
 export function WelcomeScreen({ onStart }) {
   return (
-    <div className="text-center h-screen flex flex-col justify-between items-center bg-no-repeat bg-[url('img/bg1.png')]">
+    <div className="text-center h-screen flex flex-col justify-between items-center bg-no-repeat bg-[url('/img/bg1.png')]">
       <img className="w-72 mt-4" style={{ marginTop: '-40px' }} src="img/topsecretsanta.png" alt="" />
       <button
         onClick={onStart}
