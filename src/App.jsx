@@ -59,7 +59,7 @@ export default function App() {
         )}
 
         {currentScreen === "input" && (
-          <><div className=" bg-[url('img/bg2.png')] bg-no-repeat  h-screen">
+          <><div className=" bg-[url('/img/bg2.png')] bg-no-repeat  h-screen">
             <h2 className="text-4xl text-white font-bold py-6 text-center">
               Participants
             </h2>
@@ -85,16 +85,24 @@ export default function App() {
         )}
 
         {currentScreen === "assignments" && (
-          <>
-            <h2 className="text-2xl font-bold mb-6 text-center">
-              Attributions des cadeaux
+          <><div className=" bg-[url('/img/bg3.png')] bg-no-repeat  h-screen">
+            <h2 className="text-5xl  text-white font-bold pb-10 pt-6 text-center">
+              Cadeaux
             </h2>
             <AssignmentDisplay assignments={assignments} />
-            <div className="mt-6">
-              <button className="button w-full" onClick={resetApp}>
+            <div className="mt-6 flex justify-center">
+              <button className="text-white text-2xl font-bold w-fit pt-2 pr-8 pl-8 pb-6" onClick={resetApp}
+              style={{ 
+                backgroundImage: 'url(img/bgbtnr.svg)', 
+                backgroundSize: 'contain', 
+                backgroundPosition: 'center', 
+                backgroundRepeat: 'no-repeat',
+      
+              }}>
                 Recommencer
               </button>
             </div>
+          </div>
           </>
         )}
       </div>
